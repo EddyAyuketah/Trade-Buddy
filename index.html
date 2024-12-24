@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trade-Buddy</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://s3.tradingview.com/tv.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Trade-Buddy</h1>
+    <nav>
+      <button id="trade-tab">Trade Suggestions</button>
+      <button id="demo-tab">Demo Trading</button>
+      <button id="journal-tab">Trade Journal</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Trade Suggestions Section -->
+    <section id="trade-section" class="tab-content active">
+      <h2>Trade Suggestions</h2>
+      <div class="settings-panel">
+        <label for="market-select">Market:</label>
+        <select id="market-select">
+          <option value="XAUUSD">XAU/USD</option>
+          <option value="EURUSD">EUR/USD</option>
+          <option value="USDJPY">USD/JPY</option>
+          <option value="GBPUSD">GBP/USD</option>
+          <option value="USDCHF">USD/CHF</option>
+        </select>
+
+        <label for="timeframe-select">Timeframe:</label>
+        <select id="timeframe-select">
+          <option value="60">1 Hour</option>
+          <option value="120">2 Hours</option>
+          <option value="240">4 Hours</option>
+          <option value="D">1 Day</option>
+        </select>
+
+        <label for="account-balance">Account Balance ($):</label>
+        <input type="number" id="account-balance" value="1000" />
+      </div>
+
+      <div id="trade-suggestions"></div>
+    </section>
+
+
+
+
+    
+      <!-- Demo Trading Section -->
+      <section id="demo-trading-section" class="tab-content">
+        <div class="demo-trading-container">
+          <h3>Demo Trading</h3>
+          <p class="coming-soon">Coming Soon</p>
+        </div>
+      </section>
+
+
+
+
+
+    <!-- Trade Journal Section -->
+    <section id="journal-section" class="tab-content">
+      <div class="trade-journal-container">
+        <h2>Trade Journal</h2>
+        <div class="trade-journal-container">
+          <div class="trade-list">
+            <h3>Your Trades</h3>
+            <div id="trade-entries"></div>
+          </div>
+          <div class="journal-entry">
+            <h3>Journal Entry</h3>
+            <form id="trade-form">
+              <label for="trade-date">Date:</label>
+              <input type="date" id="trade-date" required />
+      
+              <label for="trade-symbol">Trade Symbol:</label>
+              <input type="text" id="trade-symbol" placeholder="e.g., XAU/USD" required />
+      
+              <label for="trade-profit-loss">Profit/Loss ($):</label>
+              <input type="number" id="trade-profit-loss" required />
+      
+              <label for="trade-reason">Reason for Trade:</label>
+              <textarea id="trade-reason" rows="3" required></textarea>
+      
+              <button type="submit">Add Trade</button>
+            </form>
+          </div>
+        </div>
+    </div>
+      <div class="pagination">
+        <button id="previous-month">Previous</button>
+        <button id="next-month">Next</button>
+      </div>
+    </section>
+    
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Trade-Buddy. All Rights Reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/tradeSuggestions.js"></script>
+  <script src="js/demoTrading.js" defer></script>
+  <script src="js/tradeJournal.js"></script>
+  <script src="https://s3.tradingview.com/tv.js"></script>
+</body>
+</html>
